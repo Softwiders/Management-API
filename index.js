@@ -24,6 +24,8 @@ app.use("/expenses",ExpenseRouts)
 app.use("/receipts",ReceiptRouts)
 app.use("/transaction",TransactionRouts)
 
+app.use("/", (res, req) => res.send("Welcome"))
+
 //server port
 const port = 3030;
 
