@@ -12,7 +12,7 @@ const TransactionRouts = require('./Transaction')
 const app = express();
 
 // use logger
-app.use(morgan('tiny'))
+app.use(morgan('dev'))
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
