@@ -13,4 +13,17 @@ routs.get("/", (req,res)=> {
     })
 })
 
+routs.post('/', function(req, res) {
+    const { name, email , number, cost} = req.body;
+    sql.query("INSERT INTO `project` (`id`, `name`, `start`, `end`, `Dep_start`, `Dep_end`, `cost`, `email`, `number`, `status`, `Created`, `Changed`) VALUES (NULL, '"+name+"', CURRENT_DATE(), NULL, NULL, NULL, '"+cost+"', '"+email+"', '"+number+"', 'OnGoing', current_timestamp(), current_timestamp())", (err, fields) => {
+        if (!err) {
+            res.send(`Data Inserted Successfully.`);           
+        }
+        else {
+            res.send("Errs => " + err);
+        }
+    })  
+  
+})
+
 module.exports = routs
